@@ -8,6 +8,10 @@ import ExpensesList from './ExpensesList'
 const Expenses = props => {
   const [filteredYear, setFilteredYear] = useState('2020')
 
+
+
+const Expenses = props => {
+  const [filteredYear, setFilteredYear] = useState('2020')
   const filterChangeHandler = selectedYear => {
     setFilteredYear(selectedYear)
   }
@@ -15,6 +19,20 @@ const Expenses = props => {
   const filteredExpenses = props.items.filter(expense => {
     return expense.date.getFullYear().toString() === filteredYear
   })
+
+  // const dateFIlterHadler = props => {
+  //   const filter = props.selected.filter(
+  //     event => event.getFullYear() > event.target.value
+  //   )
+  // }
+
+  //Filtering Expenses y getting the expense year and comparing it with the filtered year
+  const filteredExpenses = props.items.filter(expense => {
+    //returns true or false
+    return expense.date.getFullYear().toString() === filteredYear
+  })
+
+
   return (
     <div>
       <Card className='expenses'>
@@ -22,6 +40,7 @@ const Expenses = props => {
           selected={filteredYear}
           onChangeFilter={filterChangeHandler}
         />
+
         <ExpensesChart expenses={filteredExpenses} />
         <ExpensesList items={filteredExpenses} />
       </Card>
