@@ -5,7 +5,6 @@ const ExpenseForm = props => {
   const [enteredTitle, setEnteredTitle] = useState('')
   const [enteredAmount, setEnteredAmount] = useState('')
   const [enteredDate, setEnteredDate] = useState('')
-  const [showForm, setShowForm] = useState(false)
 
   const titleChangeHandler = event => {
     setEnteredTitle(event.target.value)
@@ -15,12 +14,6 @@ const ExpenseForm = props => {
   }
   const dateChangeHandler = event => {
     setEnteredDate(event.target.value)
-  }
-  function cancelHandler () {
-    setShowForm(!true)
-  }
-  function newExpenseHandler () {
-    setShowForm(!false)
   }
   const submitHandler = event => {
     event.preventDefault()
