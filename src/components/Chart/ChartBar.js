@@ -10,7 +10,7 @@ const ChartBar = props => {
     <div className='chart-bar'>
       <div className='chart-bar__inner'>
         <div
-          className='chart_bar__fill'
+          className='chart-bar__fill'
           style={{ height: barFillHeight }}
         ></div>
       </div>
